@@ -11,14 +11,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.masahikokobayashi.smartcontractlab.ui.theme.SmartContractLabTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Greeting(
-                name = "Android",
-            )
+            SmartContractLabTheme {
+                Greeting(
+                    name = "Android",
+                )
+            }
         }
     }
 }
@@ -36,5 +39,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    Greeting("Android")
+    SmartContractLabTheme {
+        Greeting("Android")
+    }
 }
